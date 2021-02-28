@@ -17,11 +17,9 @@ class Form extends Component {
     handleSubmit = event => {
       event.preventDefault();
       const id = shortid.generate();
-      console.log(id);
       const data = {
-        ...this.state, id
+        id, ...this.state
       }
-      console.log(data);
       this.props.onSubmit(data);
       this.reset();
   }
